@@ -5,6 +5,6 @@ sudo apt-get install certbot
 sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d www.joybtech.tech
 sudo ls /etc/letsencrypt/live/joybtech.tech
 sudo mkdir -p /etc/haproxy/certs
-DOMAIN='joybtech.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
+DOMAIN='www.joybtech.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
 sudo chmod -R go-rwx /etc/haproxy/certs
 sudo nano /etc/haproxy/haproxy.cfg
