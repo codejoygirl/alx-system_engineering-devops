@@ -10,11 +10,11 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend  smartcodez-frontend
+frontend joybtech-frontend
         bind *:80
         mode http
-        default_backend smartcodez-backend
-backend smartcodez-backend
+        default_backend joybtech-backend
+backend joybtech-backend
         balance roundrobin
         server 52736-web-01 34.204.61.7 check
         server 52736-web-02 18.207.139.188 check
