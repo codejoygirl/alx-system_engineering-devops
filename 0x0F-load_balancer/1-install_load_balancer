@@ -16,8 +16,8 @@ frontend joybtech-frontend
         default_backend joybtech-backend
 backend joybtech-backend
         balance roundrobin
-        server 519536-web-01 54.83.166.109 check
-        server 519536-web-02 18.235.248.34 check
+	server 519536-web-01 54.83.166.109 check
+	server 519536-web-02 18.235.248.34 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
