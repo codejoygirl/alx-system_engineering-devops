@@ -20,9 +20,13 @@ def top_ten(subreddit):
         return
 
     try:
-        results = response.json().get("data")
-        for child in results.get("children"):
-            print(child.get("data").get("title"))
+        data = response.json()
+        if 'data' in data and 'children' in data['data']:
+            for child in data['data']['children']:
+                if 'data' in child and 'title' in child['data']:
+                    print(child['data']['title'])
+        else:
+            print("None")
     except ValueError:
         print("None")
 
@@ -34,3 +38,4 @@ if __name__ == "__main__":
     else:
         # Call the top_ten function with the provided subreddit name
         top_ten(sys.argv[1])
+
